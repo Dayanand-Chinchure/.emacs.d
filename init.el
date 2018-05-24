@@ -1151,6 +1151,9 @@ version 2016-06-18"
   :defer t
   :config (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
 
+(use-package slim-mode
+  :defer t)
+
 ;; Org mode
 (use-package ox-gfm
   :defer t)
