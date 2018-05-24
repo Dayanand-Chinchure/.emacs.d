@@ -1285,13 +1285,6 @@ version 2016-06-18"
 
 (diminish 'abbrev-mode)
 
-;; PENDING ITEMS
-;; code folding
-;; projectile switch projects
-;; org: I am just doing baby steps. Have to use it to its full capacity!
-;; dired with colors
-;; easy-kill
-
 ;;------------------
 ;; Key Bindings
 ;;------------------
