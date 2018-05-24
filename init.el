@@ -544,7 +544,7 @@ version 2016-06-18"
 ;; Referred from https://github.com/sachac/.emacs.d/blob/gh-pages/Sacha.org#helm---interactive-completion
 (use-package helm
   :diminish helm-mode
-  :init
+  :config
   (progn
     (require 'helm-config)
     (setq helm-candidate-number-limit 100)
