@@ -63,7 +63,6 @@
 ;; End of Mac specific settings
 ;;----------------------------------------------------------------------------
 
-
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -76,7 +75,6 @@
   (make-directory swanand-savefile-dir))
 
 (setq ring-bell-function 'ignore)
-
 
 ;; nice scrolling
 (setq scroll-margin 0
@@ -290,7 +288,6 @@
   (interactive)
   (scroll-down 5))
 
-
 (defun scroll-up-five ()
   "Scrolls up five rows."
   (interactive)
@@ -302,14 +299,12 @@
   (newline)
   (indent-for-tab-command))
 
-
 (defun open-line-above ()
   (interactive)
   (beginning-of-line)
   (newline)
   (forward-line -1)
   (indent-for-tab-command))
-
 
 (defun comment-or-uncomment-current-line-or-region ()
   "Comments or uncomments current current line or whole lines in region."
@@ -323,7 +318,6 @@
        (progn (goto-char min) (line-beginning-position))
        (progn (goto-char max) (line-end-position))))))
 
-
 (defun copy-and-comment-region (beg end &optional arg)
   "Duplicate the region and comment-out the copied text."
   (interactive "r\nP")
@@ -334,7 +328,6 @@
   (goto-char end)
   (forward-line)
   (back-to-indentation-or-beginning-of-line))
-
 
 (defun swap-windows ()
   "If you have 2 windows, it swaps them."
@@ -353,7 +346,6 @@
            (set-window-start w1 s2)
            (set-window-start w2 s1))))
   (other-window 1))
-
 
 (defun crux-rename-file-and-buffer ()
   "Rename current buffer and if the buffer is visiting a file, rename it too."
@@ -384,7 +376,6 @@
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
-
 
 (defun add-auto-mode (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
@@ -435,7 +426,6 @@ Otherwise point moves to beginning of line."
               (neotree-dir project-dir)
               (neotree-find file-name)))
       (message "Could not find git project root."))))
-
 
 (defun magit-just-amend ()
   (interactive)
@@ -1099,7 +1089,6 @@ version 2016-06-18"
   :bind (:map projectile-rails-mode-map ("M-<f1>" . robe-jump))
   :config (projectile-rails-global-mode +1))
 
-
 (use-package ruby-mode
   :defer t
   :init (setq-default ruby-use-encoding-map nil
@@ -1255,11 +1244,11 @@ version 2016-06-18"
 
 (use-package kubernetes
   :defer t
+  :config (evil-set-initial-state 'term-mode 'emacs)
   :commands (kubernetes-overview))
 
 (use-package multi-term
   :ensure t
-  :init
   :bind ("C-c t" . multi-term)
   :config
   (setq show-trailing-whitespace nil)
