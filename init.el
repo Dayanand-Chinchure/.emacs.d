@@ -402,22 +402,21 @@ Otherwise point moves to beginning of line."
       (kill-region (region-beginning) (region-end))
     (backward-kill-word 1)))
 
-;; NOTE: (region-beginning) and (region-end) are not saved in
-;; variables since they can change after each clean step.
-(defun clean-up-buffer-or-region ()
-  "Untabify, indent and delete trailing whitespace from buffer or region."
+(defun untabify-buffer ()
   (interactive)
-  (save-excursion
-    (unless (region-active-p)
-      (mark-whole-buffer))
-    (unless (or (eq major-mode 'coffee-mode)
-                (eq major-mode 'feature-mode))
-      (untabify (region-beginning) (region-end))
-      (indent-region (region-beginning) (region-end)))
-    (save-restriction
-      (narrow-to-region (region-beginning) (region-end))
-      (delete-trailing-whitespace))))
+  (untabify (point-min) (point-max)))
 
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun cleanup-buffer ()
+  "Perform a bunch of operations on the whitespace content of a buffer.
+Including indent-buffer, which should not be called automatically on save."
+  (interactive)
+  (untabify-buffer)
+  (delete-trailing-whitespace)
+  (indent-buffer))
 
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."
