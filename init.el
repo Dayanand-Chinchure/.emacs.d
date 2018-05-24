@@ -1046,9 +1046,6 @@ version 2016-06-18"
   :defer t
   :bind ("C-s" . swiper))
 
-(use-package idle-highlight-mode
-  :config (add-hook 'find-file-hook 'idle-highlight-mode))
-
 ;; Python
 ;; https://github.com/proofit404/anaconda-mode
 (use-package anaconda-mode
@@ -1340,10 +1337,3 @@ version 2016-06-18"
 (bind-key "C-x C-c" (lambda () (interactive)
                       (if (y-or-n-p "Quit Emacs? ")
                           (save-buffers-kill-emacs))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(idle-highlight ((t (:underline "green1")))))
