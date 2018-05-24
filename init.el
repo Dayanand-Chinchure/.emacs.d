@@ -514,6 +514,17 @@ version 2016-06-18"
   (interactive "r")
   (align-regexp start end "\\(\\s-*\\)\\s-" 1 0 t))
 
+;; from https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el
+(defun split-window-right-and-move-there-dammit ()
+  (interactive)
+  (split-window-right)
+  (windmove-right))
+
+(defun split-window-below-and-move-there-dammit ()
+  (interactive)
+  (split-window-below)
+  (windmove-down))
+
 ;;--------------------------------------------
 ;; Package configurations
 ;;--------------------------------------------
