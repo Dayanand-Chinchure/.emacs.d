@@ -163,6 +163,9 @@
 ;; Trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(setq delete-by-moving-to-trash t)
+(setq trash-directory "~/.Trash")
+
 ;; Enable transient mark mode
 (transient-mark-mode 1)
 
