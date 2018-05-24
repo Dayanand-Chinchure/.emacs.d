@@ -697,25 +697,23 @@ version 2016-06-18"
 
 (use-package smart-mode-line
   :config (progn
-            (setq sml/theme 'automatic)
-            (sml/setup))
-  :init
-  (progn
-    (setq-default
-     mode-line-format
-     '("%e"
-       mode-line-front-space
-       mode-line-mule-info
-       mode-line-client
-       mode-line-modified
-       mode-line-remote
-       mode-line-frame-identification
-       mode-line-buffer-identification
-       mode-line-position
-       (vc-mode vc-mode)
-       mode-line-modes
-       mode-line-misc-info
-       mode-line-end-spaces))))
+            (setq-default
+             mode-line-format
+             '("%e"
+               mode-line-front-space
+               mode-line-mule-info
+               mode-line-client
+               mode-line-modified
+               mode-line-remote
+               mode-line-frame-identification
+               mode-line-buffer-identification
+               mode-line-position
+               (vc-mode vc-mode)
+               mode-line-modes
+               mode-line-misc-info
+               mode-line-end-spaces))
+            (setq sml/theme 'light)
+            (sml/setup)))
 
 ;; show matching pairs
 (show-paren-mode t)
