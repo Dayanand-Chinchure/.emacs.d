@@ -677,12 +677,8 @@ version 2016-06-18"
   :config (evil-escape-mode +1))
 
 (use-package leuven-theme
-  :defer t)
-
-(use-package monokai-theme
   :ensure t
-  :config (load-theme 'monokai t))
-
+  :config (load-theme 'leuven t))
 
 (use-package beacon
   :diminish beacon-mode
