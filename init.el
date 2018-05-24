@@ -750,8 +750,7 @@ version 2016-06-18"
 
 (use-package rainbow-mode
   :diminish rainbow-mode
-  :config
-  (add-hook 'prog-mode-hook #'rainbow-mode))
+  :hook prog-mode)
 
 (use-package whitespace
   :diminish whitespace-mode
