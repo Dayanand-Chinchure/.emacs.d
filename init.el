@@ -633,6 +633,7 @@ version 2016-06-18"
    ("M-D" . sp-splice-sexp)
 
    ("C-M-]" . sp-select-next-thing)
+   ("C-M-[" . sp-select-previous-thing)
 
    ("M-F" . sp-forward-symbol)
    ("M-B" . sp-backward-symbol)
