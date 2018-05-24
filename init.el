@@ -532,7 +532,6 @@ version 2016-06-18"
 
 (use-package helm-swoop
   :defer t
-  :init (global-unset-key (kbd "s-s"))
   :bind (("s-s s" . helm-swoop)
          ("s-s a" . helm-multi-swoop-all)
          ("s-s m" . helm-multi-swoop-current-mode)
