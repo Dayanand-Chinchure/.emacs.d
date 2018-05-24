@@ -1294,20 +1294,18 @@ version 2016-06-18"
 ;; Key Bindings
 ;;------------------
 (bind-key "RET" 'newline-and-indent)
-(bind-key "C-c n" 'clean-up-buffer-or-region)
+(bind-key "C-c n" 'cleanup-buffer)
 
 (bind-key "H-l" 'linum-mode)
 
 (bind-key "M-+" 'text-scale-increase)
 (bind-key "M--" 'text-scale-decrease)
 
-(bind-key "H-t" 'swanand/toggle-theme)
-
 (bind-key "M-k" 'kill-this-buffer)
 (bind-key "M-o" 'other-window)
 (bind-key "M-1" 'delete-other-windows)
-(bind-key "M-2" 'split-window-below)
-(bind-key "M-3" 'split-window-right)
+(bind-key "M-2" 'split-window-below-and-move-there-dammit)
+(bind-key "M-3" 'split-window-right-and-move-there-dammit)
 (bind-key "M-0" 'delete-window)
 (bind-key "M-`" 'other-frame)
 
