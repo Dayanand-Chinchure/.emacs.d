@@ -597,7 +597,7 @@ version 2016-06-18"
           "g" 'magit-status
           "f" 'helm-find-files
           "b" 'switch-to-buffer
-          "p" 'helm-projectile)
+          "p" 'helm-mini)
   :config (global-evil-leader-mode))
 
 (use-package smartparens
