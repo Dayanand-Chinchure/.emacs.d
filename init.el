@@ -193,6 +193,8 @@
 ;; Kill whole line
 (setq kill-whole-line t)
 
+(global-unset-key (kbd "s-s"))
+
 ;; save a list of open files in ~/.emacs.d/.emacs.desktop
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)
