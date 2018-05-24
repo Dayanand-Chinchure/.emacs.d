@@ -1162,8 +1162,7 @@ version 2016-06-18"
   :defer t)
 
 (use-package org
-  :defer t
-  :no-require t
+  :load-path "elpa/org-20180409"
   :bind ("C-c l" . org-store-link)
   :config
   (add-to-list 'org-structure-template-alist '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
@@ -1172,6 +1171,8 @@ version 2016-06-18"
   (setq org-hide-emphasis-markers t)
   (setq org-ellipsis "⤵")
   (setq org-src-fontify-natively t)
+  ;; Fontify the whole line for headings (with a background color).
+  (setq org-fontify-whole-heading-line t)
   (setq org-html-validation-link nil)
   (setq org-export-with-smart-quotes t)
   (setq org-src-window-setup 'current-window)
@@ -1182,12 +1183,13 @@ version 2016-06-18"
           "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (add-hook 'org-mode-hook (lambda ()
+                             (org-bullets-mode 1)
+                             (whitespace-mode 0)))
   (require 'ox-gfm nil t)
 
   ;; scratch buffer to load in org-mode
   (setq initial-major-mode 'org-mode))
-
 
 ;; Protocol buffers
 (use-package protobuf-mode
