@@ -1267,8 +1267,13 @@ version 2016-06-18"
   (add-hook 'term-mode-hook (lambda () (goto-address-mode))))
 
 (use-package browse-at-remote
-  :ensure t
+  :defer t
   :bind ("C-c g" . browse-at-remote))
+
+(use-package origami
+  :defer t
+  :bind ("C-c C-f" . origami-toggle-node)
+  :config (origami-mode 1))
 
 ;; extra diminish
 (with-eval-after-load 'hi-lock
@@ -1276,7 +1281,6 @@ version 2016-06-18"
 
 (diminish 'abbrev-mode)
 
-(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 ;; PENDING ITEMS
 ;; code folding
 ;; projectile switch projects
