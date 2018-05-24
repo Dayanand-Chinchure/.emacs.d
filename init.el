@@ -767,6 +767,7 @@ version 2016-06-18"
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
 
 (use-package undo-tree
+  :defer t
   :diminish undo-tree-mode
   :config
   (setq undo-tree-visualizer-timestamps t)
@@ -1070,9 +1071,11 @@ version 2016-06-18"
 
 ;; Ruby and Rails
 (use-package flymake-ruby
+  :defer t
   :config (add-hook 'ruby-mode-hook 'flymake-ruby-load))
 
 (use-package rvm
+  :defer t
   :config (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby))
 
 (use-package ruby-hash-syntax
