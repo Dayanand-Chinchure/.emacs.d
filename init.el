@@ -240,7 +240,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (org slim-mode use-package htmlize browse-at-remote multi-term flymake-ruby kubernetes helm-dash dimmer ido-vertical-mode flx-ido smerge origami super-save haskell-mode beacon neotree rvm chruby protobuf-mode evil-nerd-commenter web-mode emmet-mode hl-todo highlight-numbers rainbow-identifiers ace-window ace-jump-mode org-mode org-bullets company-quickhelp dumb-jump swiper ox-gfm scss-mode bundler rubocop rspec-mode ruby-tools ruby-hash-syntax smart-forward projectile-rails robe company-anaconda company-restclient pip-requirements anaconda-mode restclient git-timemachine company smartscan evil-escape evil-leader evil-matchit try helm-projectile yasnippet helm-swoop dired+ immortal-scratch js2-mode highlight-escape-sequences page-break-lines helm-spotify helm-gitignore docker docker-compose-mode flyspell-correct-helm csv-mode persistent-scratch move-text dockerfile-mode cask-mode yaml-mode markdown-mode dired flycheck flyspell-lazy diff-hl which-key undo-tree rainbow-mode rainbow-delimiters expand-region multiple-cursors nyan-mode magit-blame magit all-the-icons show-paren-mode exec-path-from-shell auto-compile)))
+    (imenu-anywhere org slim-mode use-package htmlize browse-at-remote multi-term flymake-ruby kubernetes helm-dash dimmer ido-vertical-mode flx-ido smerge origami super-save haskell-mode beacon neotree rvm chruby protobuf-mode evil-nerd-commenter web-mode emmet-mode hl-todo highlight-numbers rainbow-identifiers ace-window ace-jump-mode org-mode org-bullets company-quickhelp dumb-jump swiper ox-gfm scss-mode bundler rubocop rspec-mode ruby-tools ruby-hash-syntax smart-forward projectile-rails robe company-anaconda company-restclient pip-requirements anaconda-mode restclient git-timemachine company smartscan evil-escape evil-leader evil-matchit try helm-projectile yasnippet helm-swoop dired+ immortal-scratch js2-mode highlight-escape-sequences page-break-lines helm-spotify helm-gitignore docker docker-compose-mode flyspell-correct-helm csv-mode persistent-scratch move-text dockerfile-mode cask-mode yaml-mode markdown-mode dired flycheck flyspell-lazy diff-hl which-key undo-tree rainbow-mode rainbow-delimiters expand-region multiple-cursors nyan-mode magit-blame magit all-the-icons show-paren-mode exec-path-from-shell auto-compile)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
@@ -1278,6 +1278,12 @@ version 2016-06-18"
   :defer t
   :bind ("C-c C-f" . origami-toggle-node)
   :config (origami-mode 1))
+
+(use-package imenu-anywhere
+  :ensure t
+  :bind (("C-c i" . imenu-anywhere)
+         ("s-i" . imenu-anywhere))
+  :config (setq imenu-auto-rescan t))
 
 ;; extra diminish
 (with-eval-after-load 'hi-lock
